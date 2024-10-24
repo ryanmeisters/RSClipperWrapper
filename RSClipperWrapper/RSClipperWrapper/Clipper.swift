@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Clipper
+import ClipperWrapper
 
 /// The `Clipper` class performs polygon clipping - union, difference,
 /// intersection & exclusive-or. `Clipper` is built as a wrapper of the open source

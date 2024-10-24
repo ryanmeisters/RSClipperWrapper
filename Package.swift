@@ -8,17 +8,7 @@ let package = Package(
   ],
   targets: [
     .target(
-      name: "RSClipperWrapper",
-      dependencies: ["Clipper"],
-      path: "RSClipperWrapper/RSClipperWrapper",
-      exclude: [
-        "Clipper 6.2.1",
-        "_Clipper.h",
-        "_Clipper.mm",
-      ]
-    ),
-    .target(
-      name: "Clipper",
+      name: "ClipperWrapper",
       path: "RSClipperWrapper/RSClipperWrapper",
       exclude: [
         "Clipper.swift"
@@ -27,12 +17,19 @@ let package = Package(
         "Clipper 6.2.1/clipper.hpp",
         "Clipper 6.2.1/clipper.cpp",
         "_Clipper.h",
-        "_Clipper.mm",
+        "_Clipper.mm"
       ],
       cxxSettings: [
-        .headerSearchPath("Clipper 6.2.1"),
-        .headerSearchPath("."),
+        .headerSearchPath("Clipper 6.2.1")
       ]
-    )
+    ),
+    .target(
+      name: "RSClipperWrapper",
+      dependencies: ["ClipperWrapper"],
+      path: "RSClipperWrapper/RSClipperWrapper",
+      sources: [
+        "Clipper.swift"
+      ]
+    ),
   ]
 )
