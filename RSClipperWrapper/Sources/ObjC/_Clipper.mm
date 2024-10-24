@@ -8,7 +8,7 @@
 
 #import "_Clipper.h"
 
-#include "clipper.hpp"
+#include "Clipper 6.2.1/clipper.hpp"
 
 #define kClipperScale 1000000.0f
 
